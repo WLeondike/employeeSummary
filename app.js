@@ -1,22 +1,34 @@
+//GLOBALS
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
-
+const empArr = [];
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
-
 const render = require("./lib/htmlRenderer");
 
-const empArr = [];
 
-const HTML = render(empArr);
 
-fs.writeFile(outputPath, HTML, (err) => {
-    console.log(`You've successfully created an HTML file`);
-});
+function run() {
+    inquirer.prompt([
+        {
+            type: "list",
+            name: "empOption",
+            message: "Please choose from the following the type of Employee you are:",
+            choices: [
+                "Manager",
+                "Engineer",
+                "Intern"
+            ]
+        }
+    ]).then(answers => {
+        
+    })
+}
+
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
