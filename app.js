@@ -12,7 +12,7 @@ const render = require("./lib/htmlRenderer");
 
 
 
-function run() {
+function letsGo() {
     inquirer.prompt([
         {
             type: "list",
@@ -26,8 +26,87 @@ function run() {
         }
     ]).then(answers => {
         
-    })
-}
+    });
+};
+
+function addManager() {
+    inquirer.prompt([
+        {
+            type: "",
+            name: "",
+            message: ""
+        },
+        {
+            type: "",
+            name: "",
+            message: ""
+        },
+        {
+            type: "",
+            name: "",
+            message: ""
+        },
+        {
+            type: "",
+            name: "",
+            message: ""
+        }
+    ]).then(answers => {
+        
+    });
+};
+function addEngineer() {
+    inquirer.prompt([
+        {
+            type: "",
+            name: "",
+            message: ""
+        },
+        {
+            type: "",
+            name: "",
+            message: ""
+        },
+        {
+            type: "",
+            name: "",
+            message: ""
+        },
+        {
+            type: "",
+            name: "",
+            message: ""
+        }
+    ]).then(answers => {
+        
+    });
+};
+function addIntern() {
+    inquirer.prompt([
+        {
+            type: "",
+            name: "",
+            message: ""
+        },
+        {
+            type: "",
+            name: "",
+            message: ""
+        },
+        {
+            type: "",
+            name: "",
+            message: ""
+        },
+        {
+            type: "",
+            name: "",
+            message: ""
+        }
+    ]).then(answers => {
+        
+    });
+};
 
 
 // Write code to use inquirer to gather information about the development team members,
