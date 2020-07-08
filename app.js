@@ -39,7 +39,7 @@ function addEmp() {
           managerPresent = true;
           addManager();
         } else {
-          console.log("We already have records of a Manager, press enter");
+          console.log("We already have records of a Manager, returning...");
           addEmp();
         }
       } else if (answers.empOption === "Engineer") {
@@ -47,6 +47,7 @@ function addEmp() {
       } else if (answers.empOption === "Intern") {
         addIntern();
       } else {
+        render(empArr)
         end();
       }
     });
@@ -77,7 +78,11 @@ function addManager() {
         message: "Office number for the Manager?",
       },
     ])
-    .then((answers) => {});
+    .then((answers) => {
+        const m = new Manager (answers.mName, answers.mID, answers.mEmail, answers.mOfficeNumber);
+        empArr.push(m);
+        addEmp();
+    });
 }
 
 //engineer details
@@ -105,7 +110,11 @@ function addEngineer() {
         message: "gitHub username for the Engineer?",
       },
     ])
-    .then((answers) => {});
+    .then((answers) => {
+        const e = new Engineer (answers.eName, answers.eID, answers.eEmail, answers.eGitHub);
+        empArr.push(e);
+        addEmp();
+    });
 }
 
 //intern details
@@ -133,11 +142,20 @@ function addIntern() {
         message: "What school did the Intern graduate from?",
       },
     ])
-    .then((answers) => {});
+    .then((answers) => {
+        const i = new Intern (answers.iName, answers.iID, answers.iEmail, answers.iSchool);
+        empArr.push(i);
+        addEmp();
+    });
 }
 addEmp();
 
 //generate file
-function end() {
+function end(data) {
   console.log("Employee Summary file created!");
+  fs.writeFile(outputPath, data, function(err){
+    if (err) {
+      return err;
+    };
+  });
 }
