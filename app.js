@@ -32,24 +32,24 @@ function letsGo() {
 function addManager() {
     inquirer.prompt([
         {
-            type: "",
-            name: "",
-            message: ""
+            type: "input",
+            name: "mName",
+            message: "Name of Manager?"
         },
         {
-            type: "",
-            name: "",
-            message: ""
+            type: "input",
+            name: "mID",
+            message: "Manager's ID?"
         },
         {
-            type: "",
-            name: "",
-            message: ""
+            type: "input",
+            name: "mEmail",
+            message: "Manager's email?"
         },
         {
-            type: "",
-            name: "",
-            message: ""
+            type: "input",
+            name: "mOfficeNumber",
+            message: "Office number for the Manager?"
         }
     ]).then(answers => {
         
@@ -58,24 +58,24 @@ function addManager() {
 function addEngineer() {
     inquirer.prompt([
         {
-            type: "",
-            name: "",
-            message: ""
+            type: "input",
+            name: "eName",
+            message: "Name of Engineer"
         },
         {
-            type: "",
-            name: "",
-            message: ""
+            type: "input",
+            name: "eID",
+            message: "Engineer's ID?"
         },
         {
-            type: "",
-            name: "",
-            message: ""
+            type: "input",
+            name: "eEmail",
+            message: "Engineer's email?"
         },
         {
-            type: "",
-            name: "",
-            message: ""
+            type: "input",
+            name: "eGitHub",
+            message: "gitHub username for the Engineer?"
         }
     ]).then(answers => {
         
@@ -84,24 +84,24 @@ function addEngineer() {
 function addIntern() {
     inquirer.prompt([
         {
-            type: "",
-            name: "",
-            message: ""
+            type: "input",
+            name: "iName",
+            message: "Name of Intern"
         },
         {
-            type: "",
-            name: "",
-            message: ""
+            type: "input",
+            name: "iID",
+            message: "Intern's ID?"
         },
         {
-            type: "",
-            name: "",
-            message: ""
+            type: "input",
+            name: "iEmail",
+            message: "Intern's email?"
         },
         {
-            type: "",
-            name: "",
-            message: ""
+            type: "input",
+            name: "iSchool",
+            message: "What school did the Intern graduate from?"
         }
     ]).then(answers => {
         
