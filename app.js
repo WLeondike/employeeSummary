@@ -15,6 +15,7 @@ const render = require("./lib/htmlRenderer");
 //only one manager input
 let managerPresent = false;
 
+
 //main function -- choosing employee to add
 function addEmp() {
   inquirer
@@ -32,8 +33,7 @@ function addEmp() {
             "I'm finished"
         ]
       },
-    ])
-    .then((answers) => {
+    ]).then((answers) => {
       if (answers.empOption === "Manager") {
         if (managerPresent === false) {
           managerPresent = true;
@@ -47,7 +47,7 @@ function addEmp() {
       } else if (answers.empOption === "Intern") {
         addIntern();
       } else {
-        render(empArr)
+        // render(empArr)
         end();
       }
     });
@@ -77,8 +77,7 @@ function addManager() {
         name: "mOfficeNumber",
         message: "Office number for the Manager?",
       },
-    ])
-    .then((answers) => {
+    ]).then((answers) => {
         const m = new Manager (answers.mName, answers.mID, answers.mEmail, answers.mOfficeNumber);
         empArr.push(m);
         addEmp();
@@ -109,8 +108,7 @@ function addEngineer() {
         name: "eGitHub",
         message: "gitHub username for the Engineer?",
       },
-    ])
-    .then((answers) => {
+    ]).then((answers) => {
         const e = new Engineer (answers.eName, answers.eID, answers.eEmail, answers.eGitHub);
         empArr.push(e);
         addEmp();
@@ -141,8 +139,7 @@ function addIntern() {
         name: "iSchool",
         message: "What school did the Intern graduate from?",
       },
-    ])
-    .then((answers) => {
+    ]).then((answers) => {
         const i = new Intern (answers.iName, answers.iID, answers.iEmail, answers.iSchool);
         empArr.push(i);
         addEmp();
@@ -151,9 +148,9 @@ function addIntern() {
 addEmp();
 
 //generate file
-function end(data) {
+function end() {
   console.log("Employee Summary file created!");
-  fs.writeFile(outputPath, data, function(err){
+  fs.writeFile(outputPath, render(empArr), (err) => {
     if (err) {
       return err;
     };
