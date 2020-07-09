@@ -84,9 +84,9 @@ function addManager() {
         message: "Manager's email?",
         validate: async (input) => {
           if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)){
-            return "Only accepts a valid email address...";
+            return true;
           }
-          return true;
+          return "Only accepts a valid email address...";
         }
       },
       {
@@ -139,9 +139,9 @@ function addEngineer() {
         message: "Engineer's email?",
         validate: async (input) => {
           if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)){
-            return "Only accepts a valid email address...";
+            return true;
           }
-          return true;
+          return "Only accepts a valid email address...";
         }
       },
       {
@@ -194,9 +194,9 @@ function addIntern() {
         message: "Intern's email?",
         validate: async (input) => {
           if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)){
-            return "Only accepts a valid email address...";
+            return true;
           }
-          return true;
+          return "Only accepts a valid email address...";
         }
       },
       {
