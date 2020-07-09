@@ -83,7 +83,7 @@ function addManager() {
         name: "mEmail",
         message: "Manager's email?",
         validate: async (input) => {
-          if(!input.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input))){
+          if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)){
             return "Only accepts a valid email address...";
           }
           return true;
