@@ -47,7 +47,6 @@ function addEmp() {
       } else if (answers.empOption === "Intern") {
         addIntern();
       } else {
-        // render(empArr)
         end();
       }
     });
@@ -61,21 +60,45 @@ function addManager() {
         type: "input",
         name: "mName",
         message: "Name of Manager?",
+        validate: async (input) => {
+          if (!input.match(/^[A-Z][A-Z ]{0,}/i)){
+            return "Please input at least one character, not including numbers...";
+          }
+          return true;
+        }
       },
       {
         type: "input",
         name: "mID",
         message: "Manager's ID?",
+        validate: async (input) => {
+          if(!input.match(/^[0-9]+$/)){
+            return "Only accepts numbers...";
+          }
+          return true;
+        }
       },
       {
         type: "input",
         name: "mEmail",
         message: "Manager's email?",
+        validate: async (input) => {
+          if(!input.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input))){
+            return "Only accepts a valid email address...";
+          }
+          return true;
+        }
       },
       {
         type: "input",
         name: "mOfficeNumber",
         message: "Office number for the Manager?",
+        validate: async (input) => {
+          if(!input.match(/^[0-9]+$/)){
+            return "Only accepts numbers...";
+          }
+          return true;
+        }
       },
     ]).then((answers) => {
         const m = new Manager (answers.mName, answers.mID, answers.mEmail, answers.mOfficeNumber);
@@ -92,21 +115,45 @@ function addEngineer() {
         type: "input",
         name: "eName",
         message: "Name of Engineer",
+        validate: async (input) => {
+          if (!input.match(/^[A-Z][A-Z ]{0,}/i)){
+            return "Please input at least one character, not including numbers...";
+          }
+          return true;
+        }
       },
       {
         type: "input",
         name: "eID",
         message: "Engineer's ID?",
+        validate: async (input) => {
+          if(!input.match(/^[0-9]+$/)){
+            return "Only accepts numbers...";
+          }
+          return true;
+        }
       },
       {
         type: "input",
         name: "eEmail",
         message: "Engineer's email?",
+        validate: async (input) => {
+          if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)){
+            return "Only accepts a valid email address...";
+          }
+          return true;
+        }
       },
       {
         type: "input",
         name: "eGitHub",
         message: "gitHub username for the Engineer?",
+        validate: async (input) => {
+          if(!input.match(/^[A-Z0-9_]+$/i)){
+            return "gitHub username may only contain letters, numbers, and/or _...";
+          }
+          return true;
+        }
       },
     ]).then((answers) => {
         const e = new Engineer (answers.eName, answers.eID, answers.eEmail, answers.eGitHub);
@@ -123,21 +170,45 @@ function addIntern() {
         type: "input",
         name: "iName",
         message: "Name of Intern",
+        validate: async (input) => {
+          if (!input.match(/^[A-Z][A-Z ]{0,}/i)){
+            return "Please input at least one character, not including numbers...";
+          }
+          return true;
+        }
       },
       {
         type: "input",
         name: "iID",
         message: "Intern's ID?",
+        validate: async (input) => {
+          if(!input.match(/^[0-9]+$/)){
+            return "Only accepts numbers...";
+          }
+          return true;
+        }
       },
       {
         type: "input",
         name: "iEmail",
         message: "Intern's email?",
+        validate: async (input) => {
+          if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(input)){
+            return "Only accepts a valid email address...";
+          }
+          return true;
+        }
       },
       {
         type: "input",
         name: "iSchool",
         message: "What school did the Intern graduate from?",
+        validate: async (input) => {
+          if(!input.match(/^[A-Z][A-Z ]{0,}/i)){
+            return "Only accepts at least one letter, may contain spaces...";
+          }
+          return true;
+        }
       },
     ]).then((answers) => {
         const i = new Intern (answers.iName, answers.iID, answers.iEmail, answers.iSchool);
