@@ -31,6 +31,7 @@
 
   <img src ="./images/testPass.png" width="400"> <br> <br>
   <img src ="./images/inquirerWorking.png" width="400"> <br> <br>
+  <img src ="./images/validation.png" width="400"> <br> <br>
   <img src ="./images/output.png" width="400">
 
 
