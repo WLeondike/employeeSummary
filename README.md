@@ -2,7 +2,7 @@
 
   ![badge](https://img.shields.io/badge/License-MIT-blue)
 
-  In this project, the user will be able to run the Employee Summary application through the node terminal. This application will create an HTML page that will display a small summary of their employees. Once you clone the repository, open your terminal through through the cloned file and check out [installation](#installation). Afterwards, you'll be able to run the command ``` node app.js ```. The user will then be prompted through a list of team members they can add. Once they have added all their team members added, they can execute the "I'm finished" command. This will then generate the user's page. 
+  In this project, the user will be able to run the Employee Summary application through the node terminal. This application will create an HTML page that will display a small summary of their employees. Once you clone the repository, open your terminal through through the cloned file and check out [installation](#installation). Afterwards, you'll be able to run the command ``` node app.js ```. The user will then be prompted through a list of team members they can add. Once they have all of their team members added, the user can execute the "I'm finished" command. This will then generate the user's page. 
 
   GitHub: https://github.com/WLeondike
   
